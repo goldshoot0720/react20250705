@@ -28,7 +28,7 @@ function App() {
         {showMytablecontent3 ? '隱藏處方箋資訊' : '顯示處方箋資訊'}
       </button>
       <button onClick={() => setshowMytablecontent5(!showMytablecontent5)}>
-        {showMytablecontent3 ? '隱藏學習資訊' : '顯示學習資訊'}
+        {showMytablecontent5 ? '隱藏學習資訊' : '顯示學習資訊'}
       </button>
       <button onClick={() => setshowMytablecontent6(!showMytablecontent6)}>
         {showMytablecontent6 ? '隱藏團隊成員資訊' : '顯示團隊成員資訊'}
