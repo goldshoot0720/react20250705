@@ -22,7 +22,7 @@ function MyTable({
           {showMytable5 && <th scope="col">{mytableth5}</th>}
           {showMytable6 && <th scope="col">{mytableth6}</th>}
           {showMytable5link && <th scope="col">{mytableth5}</th>}
-          {showMytable6map && <th scope="col">{mytableth6}</th>}
+          {showMytable6map && <th scope="col">{mytableth6}</th>} 
         </tr>
       </thead>
       <tbody>
