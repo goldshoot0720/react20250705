@@ -8,8 +8,8 @@ function MyTable({
   mytablecontent,
   showMytable5 = false,
   showMytable6 = false,
-  showMytable5link = false,
-  showMytable6map = false
+  showMytablelink = false,
+  showMytablemap = false,
 }) {
   return (
     <table className="table table-bordered">
@@ -21,8 +21,8 @@ function MyTable({
           <th scope="col">{mytableth4}</th>
           {showMytable5 && <th scope="col">{mytableth5}</th>}
           {showMytable6 && <th scope="col">{mytableth6}</th>}
-          {showMytable5link && <th scope="col">{mytableth5}</th>}
-          {showMytable6map && <th scope="col">{mytableth6}</th>} 
+          {showMytablelink && <th scope="col">{mytableth5}</th>}
+          {showMytablemap && <th scope="col">{mytableth6}</th>}
         </tr>
       </thead>
       <tbody>
@@ -34,8 +34,30 @@ function MyTable({
             <td>{item.column4}</td>
             {showMytable5 && <td>{item.column5}</td>}
             {showMytable6 && <td>{item.column6}</td>}
-            {showMytable5link && <td><a href={item.column5} target="_blank"><img src="internet.png" title={item.column3} alt={item.column5} width={"33px"}/></a></td>}
-            {showMytable6map && <td><a href={item.column6} target="_blank"><img src="map.png" title={item.column3} alt={item.column6} width={"33px"}/></a></td>}
+            {showMytablelink && (
+              <td>
+                <a href={item.link} target="_blank">
+                  <img
+                    src="internet.png"
+                    title={item.title}
+                    alt={item.alt}
+                    width={"33px"}
+                  />
+                </a>
+              </td>
+            )}
+            {showMytablemap && (
+              <td>
+                <a href={item.map} target="_blank">
+                  <img
+                    src="map.png"
+                    title={item.title}
+                    alt={item.alt}
+                    width={"33px"}
+                  />
+                </a>
+              </td>
+            )}
           </tr>
         ))}
       </tbody>

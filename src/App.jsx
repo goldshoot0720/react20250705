@@ -94,8 +94,8 @@ function App() {
               mytableth5="官方網站"
               mytableth6="地圖"
               mytablecontent={mytablecontent6}
-              showMytable5link={true}
-              showMytable6map={true}
+              showMytablelink={true}
+              showMytablemap={true}
             />
           )}
         </div>
