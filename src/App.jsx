@@ -4,11 +4,12 @@ import MyTable from "./MyTable";
 import { mytablecontent1 } from "./mytablecontent1";
 import { mytablecontent2 } from "./mytablecontent2";
 import { mytablecontent3 } from "./mytablecontent3";
-import MyCountDown from "./MyCountDown";
+import MyDateCountDown from "./MyDateCountDown";
 import { mytablecontent5 } from "./mytablecontent5";
 import { mytablecontent6 } from "./mytablecontent6";
 import MyCourseCountDown from "./MyCourseCountDown";
 import { mycourse1 } from "./mycourse1";
+import { mytablecontent7 } from "./mytablecontent7";
 
 function App() {
   const [showMytablecontent1, setshowMytablecontent1] = useState(false);
@@ -16,12 +17,13 @@ function App() {
   const [showMytablecontent3, setshowMytablecontent3] = useState(false);
   const [showMytablecontent5, setshowMytablecontent5] = useState(false);
   const [showMytablecontent6, setshowMytablecontent6] = useState(false);
+  const [showMytablecontent7, setshowMytablecontent7] = useState(false);
 
   return (
     <>
       <div className="container">
         <div className="row">
-          <MyCountDown
+          <MyDateCountDown
             mycountdowntitle1="紅鸞星動"
             mycountdown1="2025-06-15"
             mycountdowntitle2="考試通知書"
@@ -32,7 +34,7 @@ function App() {
           <MyCourseCountDown
             mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
             mycourse={mycourse1}
-            myviewed="3"
+            myviewed="4"
           />
           <button onClick={() => setshowMytablecontent1(!showMytablecontent1)}>
             {showMytablecontent1 ? "隱藏訂閱資訊" : "顯示訂閱資訊"}
@@ -48,6 +50,9 @@ function App() {
           </button>
           <button onClick={() => setshowMytablecontent6(!showMytablecontent6)}>
             {showMytablecontent6 ? "隱藏團隊成員資訊" : "顯示團隊成員資訊"}
+          </button>
+          <button onClick={() => setshowMytablecontent7(!showMytablecontent7)}>
+            {showMytablecontent7 ? "隱藏軟體資訊" : "顯示軟體資訊"}
           </button>
           {showMytablecontent1 && (
             <MyTable
@@ -99,6 +104,18 @@ function App() {
               mytablecontent={mytablecontent6}
               showMytablelink={true}
               showMytablemap={true}
+            />
+          )}
+
+          {showMytablecontent7 && (
+            <MyTable
+              mytableth1="軟體名稱"
+              mytableth2="購買金額"
+              mytableth3="作業系統"
+              mytableth4="備註"
+              mytableth5="官方網站"
+              mytablecontent={mytablecontent7}
+              showMytablelink={true}
             />
           )}
         </div>
