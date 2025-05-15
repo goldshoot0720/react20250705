@@ -7,6 +7,8 @@ import { mytablecontent3 } from "./mytablecontent3";
 import MyCountDown from "./MyCountDown";
 import { mytablecontent5 } from "./mytablecontent5";
 import { mytablecontent6 } from "./mytablecontent6";
+import MyCourseCountDown from "./MyCourseCountDown";
+import { mycourse1 } from "./mycourse1";
 
 function App() {
   const [showMytablecontent1, setshowMytablecontent1] = useState(false);
@@ -27,6 +29,11 @@ function App() {
             mycountdowntitle3="考試延期"
             mycountdown3="2025-07-05"
           />
+          <MyCourseCountDown
+            mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
+            mycourse={mycourse1}
+            myviewed="3"
+          />
           <button onClick={() => setshowMytablecontent1(!showMytablecontent1)}>
             {showMytablecontent1 ? "隱藏訂閱資訊" : "顯示訂閱資訊"}
           </button>
@@ -42,7 +49,6 @@ function App() {
           <button onClick={() => setshowMytablecontent6(!showMytablecontent6)}>
             {showMytablecontent6 ? "隱藏團隊成員資訊" : "顯示團隊成員資訊"}
           </button>
-
           {showMytablecontent1 && (
             <MyTable
               mytableth1="訂閱服務"
@@ -52,7 +58,6 @@ function App() {
               mytablecontent={mytablecontent1}
             />
           )}
-
           {showMytablecontent2 && (
             <MyTable
               mytableth1="銀行名稱"
@@ -62,7 +67,6 @@ function App() {
               mytablecontent={mytablecontent2}
             />
           )}
-
           {showMytablecontent3 && (
             <MyTable
               mytableth1="醫院/醫師"
@@ -72,7 +76,6 @@ function App() {
               mytablecontent={mytablecontent3}
             />
           )}
-
           {showMytablecontent5 && (
             <MyTable
               mytableth1="學習項目"

@@ -2,7 +2,7 @@ git init
 
 git add .
 
-git commit -m "react20250705 sort"
+git commit -m "react20250705 MyCourseCountDown"
 
 git remote add origin https://github.com/goldshoot0720/react20250705.git
 
