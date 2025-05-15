@@ -27,3 +27,7 @@ export const mytablecontent7 = [
     link: "",
   },
 ];
+
+mytablecontent7.sort((a, b) => {
+  return b.column2 - a.column2;
+});
