@@ -2,7 +2,7 @@ export const mytablecontent9 = [
   {
     column1: "pcloud",
     column2: "20GB",
-    column3: "goldshoot0720@g",
+    column3: "g--------0720",
     title: "pcloud",
     alt: "pcloud",
     link: "https://www.pcloud.com",
@@ -10,7 +10,7 @@ export const mytablecontent9 = [
   {
     column1: "pcloud",
     column2: "7GB",
-    column3: "abuhg17@g",
+    column3: "a----17",
     title: "pcloud",
     alt: "pcloud",
     link: "https://www.pcloud.com",

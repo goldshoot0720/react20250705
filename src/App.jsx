@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import MyTable from "./MyTable";
 import MyDateCountDown from "./MyDateCountDown";
@@ -20,27 +20,8 @@ import { mycourse6 } from "./mycourse6";
 import ReactLogo from "./assets/react.svg";
 
 function App() {
-  const [showMytablecontent1, setshowMytablecontent1] = useState(false);
-  const [showMytablecontent2, setshowMytablecontent2] = useState(false);
-  const [showMytablecontent3, setshowMytablecontent3] = useState(false);
-  const [showMytablecontent5, setshowMytablecontent5] = useState(false);
-  const [showMytablecontent6, setshowMytablecontent6] = useState(false);
-  const [showMytablecontent7, setshowMytablecontent7] = useState(false);
-  const [showMytablecontent8, setshowMytablecontent8] = useState(false);
-  const [showMytablecontent9, setshowMytablecontent9] = useState(false);
-  const [showMytablecontent10, setshowMytablecontent10] = useState(false);
   const [step, setStep] = useState(1);
 
-  function handlePrevious() {
-    if (step > 1) {
-      setStep(step - 1);
-    }
-  }
-  function handleNext() {
-    if (step < messages.length) {
-      setStep(step + 1);
-    }
-  }
   const messages = [
     "訂閱資訊",
     "銀行資訊",
@@ -52,151 +33,42 @@ function App() {
     "書單",
     "雲端空間",
   ];
-  useEffect(() => {
-    if (step === 1) {
-      setshowMytablecontent1(true);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(false);
-      setshowMytablecontent9(false);
-      setshowMytablecontent10(false);
-    } else if (step === 2) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(true);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(false);
-      setshowMytablecontent9(false);
-      setshowMytablecontent10(false);
-    } else if (step === 3) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(true);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(false);
-      setshowMytablecontent9(false);
-      setshowMytablecontent10(false);
-    } else if (step === 4) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(true);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(false);
-      setshowMytablecontent9(false);
-      setshowMytablecontent10(false);
-    } else if (step === 5) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(true);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(false);
-      setshowMytablecontent10(false);
-    } else if (step === 6) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(true);
-      setshowMytablecontent8(false);
-      setshowMytablecontent9(false);
-      setshowMytablecontent10(false);
-    } else if (step === 7) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(true);
-      setshowMytablecontent9(false);
-      setshowMytablecontent10(false);
-    } else if (step === 8) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(false);
-      setshowMytablecontent9(true);
-      setshowMytablecontent10(false);
-      setshowMytablecontent10(false);
-    } else if (step === 9) {
-      setshowMytablecontent1(false);
-      setshowMytablecontent2(false);
-      setshowMytablecontent3(false);
-      setshowMytablecontent5(false);
-      setshowMytablecontent6(false);
-      setshowMytablecontent7(false);
-      setshowMytablecontent8(false);
-      setshowMytablecontent9(false);
-      setshowMytablecontent10(true);
-    }
-  }, [step]);
+
+  // 回傳當前是否該顯示指定的內容（index 為 1~9）
+  const isContentVisible = (index) => step === index;
+
+  function handlePrevious() {
+    if (step > 1) setStep(step - 1);
+  }
+  function handleNext() {
+    if (step < messages.length) setStep(step + 1);
+  }
   return (
     <>
       <div className="container">
         <img src={ReactLogo} alt="React logo" />
+        <MyDateCountDown
+          mycountdowntitle1="紅鸞星動"
+          mycountdown1="2025-06-15"
+          mycountdowntitle2="考試通知書"
+          mycountdown2="2025-06-19"
+          mycountdowntitle3="考試延期"
+          mycountdown3="2025-07-05"
+        />
         <div className="row">
           <div className="steps">
-            <div className="numbers"></div>
-            <div
-              style={step === 1 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              1:{messages[0]}
-            </div>
-            <div
-              style={step === 2 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              2:{messages[1]}
-            </div>{" "}
-            <div
-              style={step === 3 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              3:{messages[2]}
-            </div>{" "}
-            <div
-              style={step === 4 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              4:{messages[3]}
-            </div>{" "}
-            <div
-              style={step === 5 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              5:{messages[4]}
-            </div>{" "}
-            <div
-              style={step === 6 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              6:{messages[5]}
-            </div>{" "}
-            <div
-              style={step === 7 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              7:{messages[6]}
-            </div>{" "}
-            <div
-              style={step === 8 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              8:{messages[7]}
-            </div>{" "}
-            <div
-              style={step === 9 ? { background: "#7950F2", color: "#FFF" } : {}}
-            >
-              9:{messages[8]}
-            </div>
+            {messages.map((msg, idx) => (
+              <div
+                key={idx}
+                style={
+                  step === idx + 1
+                    ? { background: "#7950F2", color: "#FFF" }
+                    : {}
+                }
+              >
+                {idx + 1}:{msg}
+              </div>
+            ))}
           </div>
           <p className="message">
             Step {step}:{messages[step - 1]}
@@ -215,15 +87,7 @@ function App() {
               Next
             </button>
           </div>
-          <MyDateCountDown
-            mycountdowntitle1="紅鸞星動"
-            mycountdown1="2025-06-15"
-            mycountdowntitle2="考試通知書"
-            mycountdown2="2025-06-19"
-            mycountdowntitle3="考試延期"
-            mycountdown3="2025-07-05"
-          />
-          {showMytablecontent1 && (
+          {isContentVisible(1) && (
             <MyTable
               mytableth1="訂閱服務"
               mytableth2="訂閱費用"
@@ -231,7 +95,7 @@ function App() {
               mytablecontent={mytablecontent1}
             />
           )}
-          {showMytablecontent2 && (
+          {isContentVisible(2) && (
             <MyTable
               mytableth1="銀行名稱"
               mytableth2="帳戶類型"
@@ -241,7 +105,7 @@ function App() {
               showMytable4={true}
             />
           )}
-          {showMytablecontent3 && (
+          {isContentVisible(3) && (
             <MyTable
               mytableth1="醫院/醫師"
               mytableth2="處方箋一"
@@ -252,7 +116,7 @@ function App() {
               showMytablelink={true}
             />
           )}
-          {showMytablecontent5 && (
+          {isContentVisible(4) && (
             <>
               <MyCourseCountDown
                 mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
@@ -301,7 +165,7 @@ function App() {
               />
             </>
           )}
-          {showMytablecontent6 && (
+          {isContentVisible(5) && (
             <MyTable
               mytableth1="姓名"
               mytableth2="職稱"
@@ -315,7 +179,7 @@ function App() {
               showMytablemap={true}
             />
           )}
-          {showMytablecontent7 && (
+          {isContentVisible(6) && (
             <MyTable
               mytableth1="軟體名稱"
               mytableth2="購買金額"
@@ -327,8 +191,8 @@ function App() {
               showMytablelink={true}
             />
           )}
-          {showMytablecontent8 && <MyWeather />}
-          {showMytablecontent9 && (
+          {isContentVisible(7) && <MyWeather />}
+          {isContentVisible(8) && (
             <MyTable
               mytableth1="書名"
               mytableth2="價格"
@@ -337,7 +201,7 @@ function App() {
               showMytablelink={true}
             />
           )}
-          {showMytablecontent10 && (
+          {isContentVisible(9) && (
             <MyTable
               mytableth1="雲端平台"
               mytableth2="容量"

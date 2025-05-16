@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
   const [stepViewd, setStepViewd] = useState(Number(myviewed));
