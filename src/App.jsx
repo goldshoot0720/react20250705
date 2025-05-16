@@ -227,6 +227,10 @@ function App() {
                 mycourse={mycourse1}
                 myviewed="5"
               />
+              <button
+                style={{ background: "#7950F2", color: "#FFF" }}
+                onClick={() => handlePrevious()}
+              ></button>
               <MyCourseCountDown
                 mytitle="The Complete JavaScript Course 2025: From Zero to Expert!"
                 myteacher="Jonas Schmedtmann"
