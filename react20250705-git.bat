@@ -2,7 +2,7 @@ git init
 
 git add .
 
-git commit -m "react20250705 MyCourseCountDown myviewed 5"
+git commit -m "react20250705 MyCourseCountDown myteacher"
 
 git remote add origin https://github.com/goldshoot0720/react20250705.git
 

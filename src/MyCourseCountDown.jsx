@@ -1,4 +1,4 @@
-function MyCourseCountDown({ mytitle, mycourse, myviewed }) {
+function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed }) {
   // console.log("mycourse", mycourse);
 
   // 計算總時數
@@ -29,7 +29,7 @@ function MyCourseCountDown({ mytitle, mycourse, myviewed }) {
         {mytitle}
       </div>
       <div className="alert alert-secondary" role="alert">
-        {mytitle}
+        {myteacher}
       </div>
       <div className="alert alert-success" role="alert">
         總時數: {totalHours}hr {remainingMinutes}min
@@ -37,6 +37,7 @@ function MyCourseCountDown({ mytitle, mycourse, myviewed }) {
       <div className="alert alert-info" role="alert">
         剩餘時數: {totalHours2}hr {remainingMinutes2}min
       </div>
+      <div class="alert alert-light" role="alert"></div>
     </>
   );
 }
