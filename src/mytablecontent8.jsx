@@ -1,21 +1,19 @@
 export const mytablecontent8 = [
   {
-    column1: "Quokka",
-    column2: "642",
-    column3: "Windows",
-    column4: "尚未購買",
-    title: "Quokka",
-    alt: "Quokka",
-    link: "https://quokkajs.com",
+    column1: "我所看見的未來",
+    column2: "300",
+    column3: "誠品線上",
+    title: "成真的話贈與塗哥一本",
+    alt: "我所看見的未來",
+    link: "https://www.eslite.com/product/1001129722682188615009",
   },
   {
-    column1: "EaseUS Video Downloader",
-    column2: "1260",
-    column3: "Windows",
-    column4: "",
-    title: "EaseUS Video Downloader",
-    alt: "EaseUS Video Downloader",
-    link: "https://tw.easeus.com/video-downloader/",
+    column1: "聖經和合本",
+    column2: "855",
+    column3: "誠品線上",
+    title: "成真的話收藏一本",
+    alt: "聖經和合本",
+    link: "https://www.eslite.com/product/10012012032682593870000",
   },
 ];
 
