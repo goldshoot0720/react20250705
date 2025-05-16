@@ -2,7 +2,7 @@ git init
 
 git add .
 
-git commit -m "react20250705 mytablecontent8"
+git commit -m "react20250705 logo"
 
 git remote add origin https://github.com/goldshoot0720/react20250705.git
 

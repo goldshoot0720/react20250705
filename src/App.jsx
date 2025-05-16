@@ -16,6 +16,7 @@ import { mycourse2 } from "./mycourse2";
 import { mycourse3 } from "./mycourse3";
 import { mycourse5 } from "./mycourse5";
 import { mycourse6 } from "./mycourse6";
+import ReactLogo from "./assets/react.svg";
 
 function App() {
   const [showMytablecontent1, setshowMytablecontent1] = useState(false);
@@ -118,6 +119,7 @@ function App() {
   return (
     <>
       <div className="container">
+        <img src={ReactLogo} alt="React logo" />
         <div className="row">
           <div className="steps">
             <div className="numbers"></div>
@@ -265,7 +267,6 @@ function App() {
               />
             </>
           )}
-
           {showMytablecontent6 && (
             <MyTable
               mytableth1="姓名"
@@ -280,7 +281,6 @@ function App() {
               showMytablemap={true}
             />
           )}
-
           {showMytablecontent7 && (
             <MyTable
               mytableth1="軟體名稱"
@@ -293,9 +293,7 @@ function App() {
               showMytablelink={true}
             />
           )}
-
           {showMytablecontent8 && <MyWeather />}
-
           {showMytablecontent9 && (
             <MyTable
               mytableth1="書名"
