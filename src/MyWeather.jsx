@@ -28,15 +28,15 @@ function MyWeather() {
         setElementName12(WeatherElement[12]["ElementName"]);
 
         for (let i = 0; i < WeatherElement[1]["Time"].length; i++) {
-          console.log(
-            WeatherElement[1]["Time"][i]["StartTime"].split("T")[0],
-            WeatherElement[1]["Time"][i]["ElementValue"][0]["MaxTemperature"],
-            WeatherElement[2]["Time"][i]["ElementValue"][0]["MinTemperature"],
-            WeatherElement[11]["Time"][i]["ElementValue"][0][
-              "ProbabilityOfPrecipitation"
-            ],
-            WeatherElement[12]["Time"][i]["ElementValue"][0]["Weather"]
-          );
+          // console.log(
+          //   WeatherElement[1]["Time"][i]["StartTime"].split("T")[0],
+          //   WeatherElement[1]["Time"][i]["ElementValue"][0]["MaxTemperature"],
+          //   WeatherElement[2]["Time"][i]["ElementValue"][0]["MinTemperature"],
+          //   WeatherElement[11]["Time"][i]["ElementValue"][0][
+          //     "ProbabilityOfPrecipitation"
+          //   ],
+          //   WeatherElement[12]["Time"][i]["ElementValue"][0]["Weather"]
+          // );
           if (i % 2 == 0) {
             mytablecontent.push({
               column1:
