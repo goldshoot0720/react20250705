@@ -72,9 +72,6 @@ function App() {
               </div>
             ))}
           </div>
-          <p className="message">
-            Step {step}:{messages[step - 1]}
-          </p>
           <div className="buttons">
             <button
               style={{ background: "#7950F2", color: "#FFF" }}
@@ -89,9 +86,9 @@ function App() {
               Next
             </button>
           </div>
-          {Array.from({ length: step }).map((_, index) => (
-            <img key={index} src={ReactLogo} alt="React logo" />
-          ))}
+          <p className="message">
+            Step {step}:{messages[step - 1]}
+          </p>
           {isContentVisible(1) && (
             <MyTable
               mytableth1="訂閱服務"

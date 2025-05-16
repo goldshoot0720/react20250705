@@ -38,24 +38,27 @@ function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
 
   return (
     <>
-      <button
-        style={{ background: "#7950F2", color: "#FFF" }}
-        onClick={() => handlePreviousViewd()}
-      >
-        Previous
-      </button>
-      第 {stepViewd} 節/第 {mycourse.length} 節
       <div className="alert alert-primary" role="alert">
         <a href={mylink} target="_blank" rel="noopener noreferrer">
           {mytitle}
         </a>
       </div>
-      <button
-        style={{ background: "#7950F2", color: "#FFF" }}
-        onClick={() => handleNextViewd()}
-      >
-        Next
-      </button>
+      第 {stepViewd} 節/第 {mycourse.length} 節
+      <div className="row mb-3">
+        <div className="col-auto">
+          <button
+            className="btn btn-primary"
+            onClick={() => handlePreviousViewd()}
+          >
+            Previous
+          </button>
+        </div>
+        <div className="col-auto">
+          <button className="btn btn-primary" onClick={() => handleNextViewd()}>
+            Next
+          </button>
+        </div>
+      </div>
       <div className="alert alert-light" role="alert">
         {myteacher}
       </div>
