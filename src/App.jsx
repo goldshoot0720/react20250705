@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import MyTable from "./MyTable";
 import MyDateCountDown from "./MyDateCountDown";
@@ -24,11 +24,145 @@ function App() {
   const [showMytablecontent6, setshowMytablecontent6] = useState(false);
   const [showMytablecontent7, setshowMytablecontent7] = useState(false);
   const [showMytablecontent8, setshowMytablecontent8] = useState(false);
-
+  function handlePrevious() {
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  }
+  function handleNext() {
+    if (step < messages.length) {
+      setStep(step + 1);
+    }
+  }
+  const messages = [
+    "學習資訊",
+    "訂閱資訊",
+    "銀行資訊",
+    "處方箋資訊",
+    "團隊成員資訊",
+    "軟體資訊",
+    "中壢區一週天氣",
+  ];
+  const [step, setStep] = useState(1);
+  useEffect(() => {
+    if (step === 1) {
+      setshowMytablecontent1(true);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(false);
+    } else if (step === 2) {
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(true);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(false);
+    } else if (step === 3) {
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(true);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(false);
+    } else if (step === 4) {
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(true);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(false);
+    } else if (step === 5) {
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(true);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(false);
+    } else if (step === 6) {
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(true);
+      setshowMytablecontent8(false);
+    } else if (step === 7) {
+      // Set the state for the last step
+    }
+  }, [step]);
   return (
     <>
       <div className="container">
         <div className="row">
+          <div className="steps">
+            <div className="numbers"></div>
+            <div
+              className={`${step >= 1 ? "active" : ""}`}
+              style={step === 1 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              1:{messages[0]}
+            </div>
+            <div
+              className={`${step >= 1 ? "active" : ""}`}
+              style={step === 2 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              2:{messages[1]}
+            </div>{" "}
+            <div
+              className={`${step >= 1 ? "active" : ""}`}
+              style={step === 3 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              3:{messages[2]}
+            </div>{" "}
+            <div
+              className={`${step >= 1 ? "active" : ""}`}
+              style={step === 4 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              4:{messages[3]}
+            </div>{" "}
+            <div
+              className={`${step >= 1 ? "active" : ""}`}
+              style={step === 5 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              5:{messages[4]}
+            </div>{" "}
+            <div
+              className={`${step >= 1 ? "active" : ""}`}
+              style={step === 6 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              6:{messages[5]}
+            </div>{" "}
+            <div
+              className={`${step >= 1 ? "active" : ""}`}
+              style={step === 7 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              7:{messages[6]}
+            </div>
+          </div>
+          <p className="message">
+            Step {step}:{messages[step - 1]}
+          </p>
+          <div className="buttons">
+            <button
+              style={{ background: "#7950F2", color: "#FFF" }}
+              onClick={() => handlePrevious()}
+            >
+              Previous
+            </button>
+            <button
+              style={{ background: "#7950F2", color: "#FFF" }}
+              onClick={() => handleNext()}
+            >
+              Next
+            </button>
+          </div>
           <MyDateCountDown
             mycountdowntitle1="紅鸞星動"
             mycountdown1="2025-06-15"
@@ -37,27 +171,6 @@ function App() {
             mycountdowntitle3="考試延期"
             mycountdown3="2025-07-05"
           />
-          <button onClick={() => setshowMytablecontent5(!showMytablecontent5)}>
-            {showMytablecontent5 ? "隱藏學習資訊" : "顯示學習資訊"}
-          </button>
-          <button onClick={() => setshowMytablecontent1(!showMytablecontent1)}>
-            {showMytablecontent1 ? "隱藏訂閱資訊" : "顯示訂閱資訊"}
-          </button>
-          <button onClick={() => setshowMytablecontent2(!showMytablecontent2)}>
-            {showMytablecontent2 ? "隱藏銀行資訊" : "顯示銀行資訊"}
-          </button>
-          <button onClick={() => setshowMytablecontent3(!showMytablecontent3)}>
-            {showMytablecontent3 ? "隱藏處方箋資訊" : "顯示處方箋資訊"}
-          </button>
-          <button onClick={() => setshowMytablecontent6(!showMytablecontent6)}>
-            {showMytablecontent6 ? "隱藏團隊成員資訊" : "顯示團隊成員資訊"}
-          </button>
-          <button onClick={() => setshowMytablecontent7(!showMytablecontent7)}>
-            {showMytablecontent7 ? "隱藏軟體資訊" : "顯示軟體資訊"}
-          </button>
-          <button onClick={() => setshowMytablecontent8(!showMytablecontent8)}>
-            {showMytablecontent8 ? "隱藏中壢區一週天氣" : "顯示中壢區一週天氣"}
-          </button>
           {showMytablecontent1 && (
             <MyTable
               mytableth1="訂閱服務"
