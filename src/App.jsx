@@ -11,6 +11,7 @@ import { mytablecontent5 } from "./mytablecontent5";
 import { mytablecontent6 } from "./mytablecontent6";
 import { mytablecontent7 } from "./mytablecontent7";
 import { mytablecontent8 } from "./mytablecontent8";
+import { mytablecontent9 } from "./mytablecontent9";
 import { mycourse1 } from "./mycourse1";
 import { mycourse2 } from "./mycourse2";
 import { mycourse3 } from "./mycourse3";
@@ -27,6 +28,7 @@ function App() {
   const [showMytablecontent7, setshowMytablecontent7] = useState(false);
   const [showMytablecontent8, setshowMytablecontent8] = useState(false);
   const [showMytablecontent9, setshowMytablecontent9] = useState(false);
+  const [showMytablecontent10, setshowMytablecontent10] = useState(false);
   const [step, setStep] = useState(1);
 
   function handlePrevious() {
@@ -48,6 +50,7 @@ function App() {
     "軟體資訊",
     "中壢區一週天氣",
     "書單",
+    "雲端空間",
   ];
   useEffect(() => {
     if (step === 1) {
@@ -58,6 +61,8 @@ function App() {
       setshowMytablecontent6(false);
       setshowMytablecontent7(false);
       setshowMytablecontent8(false);
+      setshowMytablecontent9(false);
+      setshowMytablecontent10(false);
     } else if (step === 2) {
       setshowMytablecontent1(false);
       setshowMytablecontent2(true);
@@ -66,6 +71,8 @@ function App() {
       setshowMytablecontent6(false);
       setshowMytablecontent7(false);
       setshowMytablecontent8(false);
+      setshowMytablecontent9(false);
+      setshowMytablecontent10(false);
     } else if (step === 3) {
       setshowMytablecontent1(false);
       setshowMytablecontent2(false);
@@ -74,6 +81,8 @@ function App() {
       setshowMytablecontent6(false);
       setshowMytablecontent7(false);
       setshowMytablecontent8(false);
+      setshowMytablecontent9(false);
+      setshowMytablecontent10(false);
     } else if (step === 4) {
       setshowMytablecontent1(false);
       setshowMytablecontent2(false);
@@ -82,6 +91,8 @@ function App() {
       setshowMytablecontent6(false);
       setshowMytablecontent7(false);
       setshowMytablecontent8(false);
+      setshowMytablecontent9(false);
+      setshowMytablecontent10(false);
     } else if (step === 5) {
       setshowMytablecontent1(false);
       setshowMytablecontent2(false);
@@ -90,6 +101,7 @@ function App() {
       setshowMytablecontent6(true);
       setshowMytablecontent7(false);
       setshowMytablecontent8(false);
+      setshowMytablecontent10(false);
     } else if (step === 6) {
       setshowMytablecontent1(false);
       setshowMytablecontent2(false);
@@ -98,6 +110,8 @@ function App() {
       setshowMytablecontent6(false);
       setshowMytablecontent7(true);
       setshowMytablecontent8(false);
+      setshowMytablecontent9(false);
+      setshowMytablecontent10(false);
     } else if (step === 7) {
       setshowMytablecontent1(false);
       setshowMytablecontent2(false);
@@ -106,6 +120,8 @@ function App() {
       setshowMytablecontent6(false);
       setshowMytablecontent7(false);
       setshowMytablecontent8(true);
+      setshowMytablecontent9(false);
+      setshowMytablecontent10(false);
     } else if (step === 8) {
       setshowMytablecontent1(false);
       setshowMytablecontent2(false);
@@ -115,6 +131,18 @@ function App() {
       setshowMytablecontent7(false);
       setshowMytablecontent8(false);
       setshowMytablecontent9(true);
+      setshowMytablecontent10(false);
+      setshowMytablecontent10(false);
+    } else if (step === 9) {
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(false);
+      setshowMytablecontent9(false);
+      setshowMytablecontent10(true);
     }
   }, [step]);
   return (
@@ -163,6 +191,11 @@ function App() {
               style={step === 8 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               8:{messages[7]}
+            </div>{" "}
+            <div
+              style={step === 9 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              9:{messages[8]}
             </div>
           </div>
           <p className="message">
@@ -301,6 +334,15 @@ function App() {
               mytableth2="價格"
               mytableth3="平台"
               mytablecontent={mytablecontent8}
+              showMytablelink={true}
+            />
+          )}
+          {showMytablecontent10 && (
+            <MyTable
+              mytableth1="雲端平台"
+              mytableth2="容量"
+              mytableth3="帳號"
+              mytablecontent={mytablecontent9}
               showMytablelink={true}
             />
           )}
