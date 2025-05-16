@@ -28,7 +28,6 @@ function App() {
   const [showMytablecontent8, setshowMytablecontent8] = useState(false);
   const [showMytablecontent9, setshowMytablecontent9] = useState(false);
   const [step, setStep] = useState(1);
-  const [stepViewd, setStepViewd] = useState(6);
 
   function handlePrevious() {
     if (step > 1) {
@@ -38,16 +37,6 @@ function App() {
   function handleNext() {
     if (step < messages.length) {
       setStep(step + 1);
-    }
-  }
-  function handlePreviousViewd() {
-    if (stepViewd > 1) {
-      setStepViewd(stepViewd - 1);
-    }
-  }
-  function handleNextViewd() {
-    if (step < messages.length) {
-      setStepViewd(stepViewd + 1);
     }
   }
   const messages = [
@@ -232,25 +221,13 @@ function App() {
           )}
           {showMytablecontent5 && (
             <>
-              <button
-                style={{ background: "#7950F2", color: "#FFF" }}
-                onClick={() => handlePreviousViewd()}
-              >
-                Previous
-              </button>
               <MyCourseCountDown
                 mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
                 myteacher="Jonas Schmedtmann"
                 mylink="https://www.udemy.com/course/the-ultimate-react-course"
                 mycourse={mycourse1}
-                myviewed={stepViewd}
+                myviewed="6"
               />
-              <button
-                style={{ background: "#7950F2", color: "#FFF" }}
-                onClick={() => handleNextViewd()}
-              >
-                Next
-              </button>
               <MyCourseCountDown
                 mytitle="The Complete JavaScript Course 2025: From Zero to Expert!"
                 myteacher="Jonas Schmedtmann"

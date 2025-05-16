@@ -1,5 +1,18 @@
+import { useState, useEffect } from "react";
+
 function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
-  // console.log("mycourse", mycourse);
+  const [stepViewd, setStepViewd] = useState(Number(myviewed));
+
+  function handlePreviousViewd() {
+    if (stepViewd > 1) {
+      setStepViewd(stepViewd - 1);
+    }
+  }
+  function handleNextViewd() {
+    if (stepViewd < mycourse.length) {
+      setStepViewd(stepViewd + 1);
+    }
+  }
 
   // 計算總時數
   let totalMinutes = 0;
@@ -12,7 +25,7 @@ function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
   const remainingMinutes = totalMinutes % 60;
 
   // 計算剩餘時數
-  const mycoursenew = mycourse.slice(myviewed);
+  const mycoursenew = mycourse.slice(stepViewd);
   // console.log("mycoursenew", mycoursenew);
   let totalMinutes2 = 0;
   mycoursenew.forEach((item) => {
@@ -25,11 +38,24 @@ function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
 
   return (
     <>
+      <button
+        style={{ background: "#7950F2", color: "#FFF" }}
+        onClick={() => handlePreviousViewd()}
+      >
+        Previous
+      </button>
+      第 {stepViewd} 節/第 {mycourse.length} 節
       <div className="alert alert-primary" role="alert">
         <a href={mylink} target="_blank" rel="noopener noreferrer">
           {mytitle}
         </a>
       </div>
+      <button
+        style={{ background: "#7950F2", color: "#FFF" }}
+        onClick={() => handleNextViewd()}
+      >
+        Next
+      </button>
       <div className="alert alert-light" role="alert">
         {myteacher}
       </div>
