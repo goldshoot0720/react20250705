@@ -46,7 +46,6 @@ function App() {
   return (
     <>
       <div className="container">
-        <img src={ReactLogo} alt="React logo" />
         <MyDateCountDown
           mycountdowntitle1="紅鸞星動"
           mycountdown1="2025-06-15"
@@ -57,6 +56,9 @@ function App() {
         />
         <div className="row">
           <div className="steps">
+            {Array.from({ length: step }).map((_, index) => (
+              <img key={index} src={ReactLogo} alt="React logo" />
+            ))}
             {messages.map((msg, idx) => (
               <div
                 key={idx}
