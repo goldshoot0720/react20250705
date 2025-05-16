@@ -2,7 +2,7 @@ git init
 
 git add .
 
-git commit -m "react20250705 Step"
+git commit -m "react20250705 Step 7"
 
 git remote add origin https://github.com/goldshoot0720/react20250705.git
 

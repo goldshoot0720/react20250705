@@ -35,10 +35,10 @@ function App() {
     }
   }
   const messages = [
-    "學習資訊",
     "訂閱資訊",
     "銀行資訊",
     "處方箋資訊",
+    "學習資訊",
     "團隊成員資訊",
     "軟體資訊",
     "中壢區一週天氣",
@@ -94,7 +94,13 @@ function App() {
       setshowMytablecontent7(true);
       setshowMytablecontent8(false);
     } else if (step === 7) {
-      // Set the state for the last step
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(true);
     }
   }, [step]);
   return (
