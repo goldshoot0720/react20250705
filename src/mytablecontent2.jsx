@@ -26,7 +26,7 @@ export const mytablecontent2 = [
   {
     column1: "國泰世華",
     column2: "活存",
-    column3: "165",
+    column3: "",
     column4: "",
   },
   {
@@ -86,7 +86,7 @@ export const mytablecontent2 = [
   {
     column1: "玉山銀行",
     column2: "活存",
-    column3: "154",
+    column3: "",
     column4: "",
   },
   {
@@ -98,13 +98,13 @@ export const mytablecontent2 = [
   {
     column1: "台新銀行",
     column2: "活存",
-    column3: "31",
+    column3: "2995",
     column4: "",
   },
   {
     column1: "台新銀行",
     column2: "定存",
-    column3: "3333",
+    column3: "",
     column4: "",
   },
   {

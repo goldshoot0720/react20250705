@@ -16,13 +16,13 @@ export const mytablecontent5 = [
   },
   {
     column1: "Advanced CSS and Sass: Flexbox, Grid, Animations and More!",
-    column2: "",
-    column3: "0/0",
+    column2: "1. Welcome to the Most Advanced CSS Course Ever!",
+    column3: "0/126",
   },
   {
     column1: "Build Responsive Real-World Websites with HTML and CSS",
-    column2: "",
-    column3: "0/0",
+    column2: "1. Course Structure and Projects",
+    column3: "0/149",
   },
 ];
 
