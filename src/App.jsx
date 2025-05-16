@@ -84,7 +84,8 @@ function App() {
               mytableth3="處方箋二"
               mytableth4="門診"
               mytablecontent={mytablecontent3}
-              showMytable5={true}
+              showMytable4={true}
+              showMytablelink={true}
             />
           )}
           {showMytablecontent5 && (
