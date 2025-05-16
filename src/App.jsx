@@ -10,6 +10,7 @@ import { mytablecontent3 } from "./mytablecontent3";
 import { mytablecontent5 } from "./mytablecontent5";
 import { mytablecontent6 } from "./mytablecontent6";
 import { mytablecontent7 } from "./mytablecontent7";
+import { mytablecontent8 } from "./mytablecontent8";
 import { mycourse1 } from "./mycourse1";
 import { mycourse2 } from "./mycourse2";
 import { mycourse3 } from "./mycourse3";
@@ -24,6 +25,7 @@ function App() {
   const [showMytablecontent6, setshowMytablecontent6] = useState(false);
   const [showMytablecontent7, setshowMytablecontent7] = useState(false);
   const [showMytablecontent8, setshowMytablecontent8] = useState(false);
+  const [showMytablecontent9, setshowMytablecontent9] = useState(false);
   function handlePrevious() {
     if (step > 1) {
       setStep(step - 1);
@@ -42,6 +44,7 @@ function App() {
     "團隊成員資訊",
     "軟體資訊",
     "中壢區一週天氣",
+    "書單",
   ];
   const [step, setStep] = useState(1);
   useEffect(() => {
@@ -101,6 +104,15 @@ function App() {
       setshowMytablecontent6(false);
       setshowMytablecontent7(false);
       setshowMytablecontent8(true);
+    } else if (step === 8) {
+      setshowMytablecontent1(false);
+      setshowMytablecontent2(false);
+      setshowMytablecontent3(false);
+      setshowMytablecontent5(false);
+      setshowMytablecontent6(false);
+      setshowMytablecontent7(false);
+      setshowMytablecontent8(false);
+      setshowMytablecontent9(true);
     }
   }, [step]);
   return (
@@ -110,46 +122,44 @@ function App() {
           <div className="steps">
             <div className="numbers"></div>
             <div
-              className={`${step >= 1 ? "active" : ""}`}
               style={step === 1 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               1:{messages[0]}
             </div>
             <div
-              className={`${step >= 1 ? "active" : ""}`}
               style={step === 2 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               2:{messages[1]}
             </div>{" "}
             <div
-              className={`${step >= 1 ? "active" : ""}`}
               style={step === 3 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               3:{messages[2]}
             </div>{" "}
             <div
-              className={`${step >= 1 ? "active" : ""}`}
               style={step === 4 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               4:{messages[3]}
             </div>{" "}
             <div
-              className={`${step >= 1 ? "active" : ""}`}
               style={step === 5 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               5:{messages[4]}
             </div>{" "}
             <div
-              className={`${step >= 1 ? "active" : ""}`}
               style={step === 6 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               6:{messages[5]}
             </div>{" "}
             <div
-              className={`${step >= 1 ? "active" : ""}`}
               style={step === 7 ? { background: "#7950F2", color: "#FFF" } : {}}
             >
               7:{messages[6]}
+            </div>{" "}
+            <div
+              style={step === 8 ? { background: "#7950F2", color: "#FFF" } : {}}
+            >
+              8:{messages[7]}
             </div>
           </div>
           <p className="message">
@@ -285,6 +295,16 @@ function App() {
           )}
 
           {showMytablecontent8 && <MyWeather />}
+
+          {showMytablecontent9 && (
+            <MyTable
+              mytableth1="書名"
+              mytableth2="價格"
+              mytableth3="平台"
+              mytablecontent={mytablecontent8}
+              showMytablelink={true}
+            />
+          )}
         </div>
       </div>
     </>
