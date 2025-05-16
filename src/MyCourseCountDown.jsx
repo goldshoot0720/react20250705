@@ -29,9 +29,12 @@ function MyCourseCountDown({ mytitle, mycourse, myviewed }) {
         {mytitle}
       </div>
       <div className="alert alert-secondary" role="alert">
-        總時數: {totalHours}hr {remainingMinutes}min
+        {mytitle}
       </div>
       <div className="alert alert-success" role="alert">
+        總時數: {totalHours}hr {remainingMinutes}min
+      </div>
+      <div className="alert alert-info" role="alert">
         剩餘時數: {totalHours2}hr {remainingMinutes2}min
       </div>
     </>
