@@ -89,6 +89,9 @@ function App() {
               Next
             </button>
           </div>
+          {Array.from({ length: step }).map((_, index) => (
+            <img key={index} src={ReactLogo} alt="React logo" />
+          ))}
           {isContentVisible(1) && (
             <MyTable
               mytableth1="訂閱服務"
