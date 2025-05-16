@@ -1,5 +1,5 @@
 function MyCourseCountDown({ mytitle, mycourse, myviewed }) {
-  console.log("mycourse", mycourse);
+  // console.log("mycourse", mycourse);
 
   // 計算總時數
   let totalMinutes = 0;
@@ -13,7 +13,7 @@ function MyCourseCountDown({ mytitle, mycourse, myviewed }) {
 
   // 計算剩餘時數
   const mycoursenew = mycourse.slice(myviewed);
-  console.log("mycoursenew", mycoursenew);
+  // console.log("mycoursenew", mycoursenew);
   let totalMinutes2 = 0;
   mycoursenew.forEach((item) => {
     if (item) {

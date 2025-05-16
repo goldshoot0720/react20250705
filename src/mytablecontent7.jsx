@@ -17,15 +17,6 @@ export const mytablecontent7 = [
     alt: "EaseUS Video Downloader",
     link: "https://tw.easeus.com/video-downloader/",
   },
-  {
-    column1: "",
-    column2: "",
-    column3: "",
-    column4: "",
-    title: "",
-    alt: "",
-    link: "",
-  },
 ];
 
 mytablecontent7.sort((a, b) => {

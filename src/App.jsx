@@ -10,6 +10,7 @@ import { mytablecontent6 } from "./mytablecontent6";
 import MyCourseCountDown from "./MyCourseCountDown";
 import { mycourse1 } from "./mycourse1";
 import { mytablecontent7 } from "./mytablecontent7";
+import MyWeather from "./MyWeather";
 
 function App() {
   const [showMytablecontent1, setshowMytablecontent1] = useState(false);
@@ -18,6 +19,7 @@ function App() {
   const [showMytablecontent5, setshowMytablecontent5] = useState(false);
   const [showMytablecontent6, setshowMytablecontent6] = useState(false);
   const [showMytablecontent7, setshowMytablecontent7] = useState(false);
+  const [showMytablecontent8, setshowMytablecontent8] = useState(false);
 
   return (
     <>
@@ -54,12 +56,14 @@ function App() {
           <button onClick={() => setshowMytablecontent7(!showMytablecontent7)}>
             {showMytablecontent7 ? "隱藏軟體資訊" : "顯示軟體資訊"}
           </button>
+          <button onClick={() => setshowMytablecontent8(!showMytablecontent8)}>
+            {showMytablecontent8 ? "隱藏中壢區一週天氣" : "顯示中壢區一週天氣"}
+          </button>
           {showMytablecontent1 && (
             <MyTable
               mytableth1="訂閱服務"
               mytableth2="訂閱費用"
               mytableth3="下次扣款日期"
-              mytableth4="備註"
               mytablecontent={mytablecontent1}
             />
           )}
@@ -70,6 +74,7 @@ function App() {
               mytableth3="帳戶餘額"
               mytableth4="金融卡類型"
               mytablecontent={mytablecontent2}
+              showMytable4={true}
             />
           )}
           {showMytablecontent3 && (
@@ -79,6 +84,7 @@ function App() {
               mytableth3="處方箋二"
               mytableth4="門診"
               mytablecontent={mytablecontent3}
+              showMytable5={true}
             />
           )}
           {showMytablecontent5 && (
@@ -89,6 +95,7 @@ function App() {
               mytableth4="%"
               mytableth5="-"
               mytablecontent={mytablecontent5}
+              showMytable4={true}
               showMytable5={true}
             />
           )}
@@ -102,6 +109,7 @@ function App() {
               mytableth5="官方網站"
               mytableth6="地圖"
               mytablecontent={mytablecontent6}
+              showMytable4={true}
               showMytablelink={true}
               showMytablemap={true}
             />
@@ -115,9 +123,12 @@ function App() {
               mytableth4="備註"
               mytableth5="官方網站"
               mytablecontent={mytablecontent7}
+              showMytable4={true}
               showMytablelink={true}
             />
           )}
+
+          {showMytablecontent8 && <MyWeather />}
         </div>
       </div>
     </>
