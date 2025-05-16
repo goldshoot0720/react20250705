@@ -1,18 +1,28 @@
 export const mytablecontent5 = [
   {
     column1: "The Ultimate React Course 2025: React, Next.js, Redux & More",
-    column2: "42. Passing and Receiving Props",
-    column3: "42/505",
+    column2: "57. Let's Build a Steps Component",
+    column3: "56/505",
   },
   {
     column1: "The Complete JavaScript Course 2025: From Zero to Expert!",
-    column2: "51. CHALLENGE #4: Video Solution",
-    column3: "59/342",
+    column2: "1. Course Structure and Projects",
+    column3: "0/342",
   },
   {
     column1: "Node.js, Express, MongoDB & More: The Complete Bootcamp",
-    column2: "16. Parsing Variables from URLs",
-    column3: "15/229",
+    column2: "1. Course Structure and Projects",
+    column3: "0/229",
+  },
+  {
+    column1: "Advanced CSS and Sass: Flexbox, Grid, Animations and More!",
+    column2: "",
+    column3: "0/0",
+  },
+  {
+    column1: "Build Responsive Real-World Websites with HTML and CSS",
+    column2: "",
+    column3: "0/0",
   },
 ];
 

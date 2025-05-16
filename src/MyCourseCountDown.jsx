@@ -1,4 +1,4 @@
-function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed }) {
+function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
   // console.log("mycourse", mycourse);
 
   // 計算總時數
@@ -26,18 +26,17 @@ function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed }) {
   return (
     <>
       <div className="alert alert-primary" role="alert">
-        {mytitle}
+        <a href={mylink} target="_blank" rel="noopener noreferrer">
+          {mytitle}
+        </a>
       </div>
-      <div className="alert alert-secondary" role="alert">
+      <div className="alert alert-light" role="alert">
         {myteacher}
       </div>
-      <div className="alert alert-success" role="alert">
-        總時數: {totalHours}hr {remainingMinutes}min
-      </div>
       <div className="alert alert-info" role="alert">
-        剩餘時數: {totalHours2}hr {remainingMinutes2}min
+        {totalHours2}hr{remainingMinutes2}min(剩餘時數)/{totalHours}hr
+        {remainingMinutes}min(總時數)
       </div>
-      <div class="alert alert-light" role="alert"></div>
     </>
   );
 }

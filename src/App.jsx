@@ -1,16 +1,20 @@
 import { useState } from "react";
 import "./App.css";
 import MyTable from "./MyTable";
+import MyDateCountDown from "./MyDateCountDown";
+import MyWeather from "./MyWeather";
+import MyCourseCountDown from "./MyCourseCountDown";
 import { mytablecontent1 } from "./mytablecontent1";
 import { mytablecontent2 } from "./mytablecontent2";
 import { mytablecontent3 } from "./mytablecontent3";
-import MyDateCountDown from "./MyDateCountDown";
 import { mytablecontent5 } from "./mytablecontent5";
 import { mytablecontent6 } from "./mytablecontent6";
-import MyCourseCountDown from "./MyCourseCountDown";
-import { mycourse1 } from "./mycourse1";
 import { mytablecontent7 } from "./mytablecontent7";
-import MyWeather from "./MyWeather";
+import { mycourse1 } from "./mycourse1";
+import { mycourse2 } from "./mycourse2";
+import { mycourse3 } from "./mycourse3";
+import { mycourse5 } from "./mycourse5";
+import { mycourse6 } from "./mycourse6";
 
 function App() {
   const [showMytablecontent1, setshowMytablecontent1] = useState(false);
@@ -33,12 +37,9 @@ function App() {
             mycountdowntitle3="考試延期"
             mycountdown3="2025-07-05"
           />
-          <MyCourseCountDown
-            mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
-            myteacher="Jonas Schmedtmann"
-            mycourse={mycourse1}
-            myviewed="5"
-          />
+          <button onClick={() => setshowMytablecontent5(!showMytablecontent5)}>
+            {showMytablecontent5 ? "隱藏學習資訊" : "顯示學習資訊"}
+          </button>
           <button onClick={() => setshowMytablecontent1(!showMytablecontent1)}>
             {showMytablecontent1 ? "隱藏訂閱資訊" : "顯示訂閱資訊"}
           </button>
@@ -47,9 +48,6 @@ function App() {
           </button>
           <button onClick={() => setshowMytablecontent3(!showMytablecontent3)}>
             {showMytablecontent3 ? "隱藏處方箋資訊" : "顯示處方箋資訊"}
-          </button>
-          <button onClick={() => setshowMytablecontent5(!showMytablecontent5)}>
-            {showMytablecontent5 ? "隱藏學習資訊" : "顯示學習資訊"}
           </button>
           <button onClick={() => setshowMytablecontent6(!showMytablecontent6)}>
             {showMytablecontent6 ? "隱藏團隊成員資訊" : "顯示團隊成員資訊"}
@@ -90,16 +88,53 @@ function App() {
             />
           )}
           {showMytablecontent5 && (
-            <MyTable
-              mytableth1="學習項目"
-              mytableth2="課程內容"
-              mytableth3="學習進度"
-              mytableth4="%"
-              mytableth5="-"
-              mytablecontent={mytablecontent5}
-              showMytable4={true}
-              showMytable5={true}
-            />
+            <>
+              <MyCourseCountDown
+                mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
+                myteacher="Jonas Schmedtmann"
+                mylink="https://www.udemy.com/course/the-ultimate-react-course"
+                mycourse={mycourse1}
+                myviewed="5"
+              />
+              <MyCourseCountDown
+                mytitle="The Complete JavaScript Course 2025: From Zero to Expert!"
+                myteacher="Jonas Schmedtmann"
+                mylink="https://www.udemy.com/course/the-complete-javascript-course/"
+                mycourse={mycourse2}
+                myviewed="0"
+              />
+              <MyCourseCountDown
+                mytitle="Node.js, Express, MongoDB & More: The Complete Bootcamp"
+                myteacher="Jonas Schmedtmann"
+                mylink="https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/"
+                mycourse={mycourse3}
+                myviewed="0"
+              />
+              <MyCourseCountDown
+                mytitle="Advanced CSS and Sass: Flexbox, Grid, Animations and More!"
+                myteacher="Jonas Schmedtmann"
+                mylink="https://www.udemy.com/course/advanced-css-and-sass/"
+                mycourse={mycourse5}
+                myviewed="0"
+              />
+              <MyCourseCountDown
+                mytitle="Build Responsive Real-World Websites with HTML and CSS"
+                myteacher="Jonas Schmedtmann"
+                mylink="https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3"
+                mycourse={mycourse6}
+                myviewed="0"
+              />
+              <MyTable
+                mytableth1="學習項目"
+                mytableth2="課程內容"
+                mytableth3="學習進度"
+                mytableth4="%"
+                mytableth5="-"
+                mytablecontent={mytablecontent5}
+                showMytable4={true}
+                showMytable5={true}
+              />
+            </>
           )}
 
           {showMytablecontent6 && (
