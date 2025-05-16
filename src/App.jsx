@@ -36,7 +36,7 @@ function App() {
           <MyCourseCountDown
             mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
             mycourse={mycourse1}
-            myviewed="4"
+            myviewed="5"
           />
           <button onClick={() => setshowMytablecontent1(!showMytablecontent1)}>
             {showMytablecontent1 ? "隱藏訂閱資訊" : "顯示訂閱資訊"}
