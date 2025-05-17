@@ -1,4 +1,5 @@
 import { useState } from "react";
+import confetti from "canvas-confetti";
 
 function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
   const [stepViewd, setStepViewd] = useState(Number(myviewed));
@@ -12,6 +13,14 @@ function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
     if (stepViewd < mycourse.length) {
       setStepViewd(stepViewd + 1);
     }
+  }
+
+  function ShowConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
   }
 
   // 計算總時數
@@ -44,6 +53,8 @@ function MyCourseCountDown({ mytitle, myteacher, mycourse, myviewed, mylink }) {
         </a>
       </div>
       第 {stepViewd} 節/第 {mycourse.length} 節
+      {stepViewd === mycourse.length ? "🎉" : ""}
+      {stepViewd === mycourse.length ? ShowConfetti() : ""}
       <div className="row mb-3">
         <div className="col-auto">
           <button
