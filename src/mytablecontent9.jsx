@@ -38,7 +38,8 @@ export const mytablecontent9 = [
     title: "OneDrive",
     alt: "OneDrive",
     link: "https://onedrive.live.com",
-  }  {
+  },
+  {
     column1: "Google Drive",
     column2: "15GB",
     column3: "a----17",
