@@ -2,7 +2,7 @@ git init
 
 git add .
 
-git commit -m "react20250705 myviewed 7"
+git commit -m "react20250705 file dictionary"
 
 git remote add origin https://github.com/goldshoot0720/react20250705.git
 
