@@ -6,7 +6,6 @@ function MyTable({
   mytableth5,
   mytableth6,
   mytablecontent,
-  showMytable4 = false,
   showMytable5 = false,
   showMytable6 = false,
   showMytablelink = false,
@@ -19,7 +18,7 @@ function MyTable({
           <th scope="col">{mytableth1}</th>
           <th scope="col">{mytableth2}</th>
           <th scope="col">{mytableth3}</th>
-          {showMytable4 && <th scope="col">{mytableth4}</th>}
+          <th scope="col">{mytableth4}</th>
           {showMytable5 && <th scope="col">{mytableth5}</th>}
           {showMytable6 && <th scope="col">{mytableth6}</th>}
           {showMytablelink && <th scope="col">{mytableth5}</th>}
@@ -32,7 +31,7 @@ function MyTable({
             <td>{item.column1}</td>
             <td>{item.column2}</td>
             <td>{item.column3}</td>
-            {showMytable4 && <td>{item.column4}</td>}
+            <td>{item.column4}</td>
             {showMytable5 && <td>{item.column5}</td>}
             {showMytable6 && <td>{item.column6}</td>}
             {showMytablelink && (

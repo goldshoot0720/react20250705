@@ -94,6 +94,7 @@ function App() {
               mytableth1="訂閱服務"
               mytableth2="訂閱費用"
               mytableth3="下次扣款日期"
+              mytableth4="備註"
               mytablecontent={mytablecontent1}
             />
           )}
@@ -113,8 +114,8 @@ function App() {
               mytableth2="處方箋一"
               mytableth3="處方箋二"
               mytableth4="門診"
+              mytableth5="官方網站"
               mytablecontent={mytablecontent3}
-              showMytable4={true}
               showMytablelink={true}
             />
           )}
@@ -199,6 +200,8 @@ function App() {
               mytableth1="書名"
               mytableth2="價格"
               mytableth3="平台"
+              mytableth4="備註"
+              mytableth5="官方網站"
               mytablecontent={mytablecontent8}
               showMytablelink={true}
             />
@@ -208,6 +211,8 @@ function App() {
               mytableth1="雲端平台"
               mytableth2="容量"
               mytableth3="帳號"
+              mytableth4="備註"
+              mytableth5="官方網站"
               mytablecontent={mytablecontent9}
               showMytablelink={true}
             />
