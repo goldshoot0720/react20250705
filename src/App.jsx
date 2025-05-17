@@ -126,7 +126,7 @@ function App() {
                 myteacher="Jonas Schmedtmann"
                 mylink="https://www.udemy.com/course/the-ultimate-react-course"
                 mycourse={mycourse1}
-                myviewed="6"
+                myviewed="7"
               />
               <MyCourseCountDown
                 mytitle="The Complete JavaScript Course 2025: From Zero to Expert!"
