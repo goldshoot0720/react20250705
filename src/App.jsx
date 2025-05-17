@@ -12,6 +12,8 @@ import { mytablecontent6 } from "./mytableData/mytablecontent6";
 import { mytablecontent7 } from "./mytableData/mytablecontent7";
 import { mytablecontent8 } from "./mytableData/mytablecontent8";
 import { mytablecontent9 } from "./mytableData/mytablecontent9";
+import { mycourseminus1 } from "./mycourseData/mycourseminus1";
+import { mycourseminus2 } from "./mycourseData/mycourseminus2";
 import { mycourse1 } from "./mycourseData/mycourse1";
 import { mycourse2 } from "./mycourseData/mycourse2";
 import { mycourse3 } from "./mycourseData/mycourse3";
@@ -121,6 +123,20 @@ function App() {
           )}
           {isContentVisible(4) && (
             <>
+              <MyCourseCountDown
+                mytitle="Remix v2 complete masterclass - Build Full-stack AI apps"
+                myteacher="Soumya Sahu"
+                mylink="https://www.udemy.com/course/remix-js-course/"
+                mycourse={mycourseminus1}
+                myviewed="1"
+              />
+              <MyCourseCountDown
+                mytitle="Remix.js - The Practical Guide"
+                myteacher="Maximilian Schwarzmüller"
+                mylink="https://www.udemy.com/course/remix-course/"
+                mycourse={mycourseminus2}
+                myviewed="0"
+              />
               <MyCourseCountDown
                 mytitle="The Ultimate React Course 2025: React, Next.js, Redux & More"
                 myteacher="Jonas Schmedtmann"
